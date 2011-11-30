@@ -1,4 +1,4 @@
-verbose 1
+verbose 0
 print_final 1
 pause 1
 ruleset 2

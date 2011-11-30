@@ -33,14 +33,14 @@ void eval_single(thrust::host_vector<ingpu::Agent>& in_lhs_host, thrust::host_ve
 	   ----------------  */
 	//arbitrary_transformation_example();
 	result_info rinfo;
-	if (partition) {
-		rinfo = 
-		partition_interaction_step(ruleset, in_lhs_host, in_rhs_host, verbose, print_final_net, pause);
-	}
-	else  {
+	//if (partition) {
+	//	rinfo = 
+	//	partition_interaction_step(ruleset, in_lhs_host, in_rhs_host, verbose, print_final_net, pause);
+	//}
+	//else  {
 		rinfo = 
 		test_interaction_step(ruleset, in_lhs_host, in_rhs_host, verbose, print_final_net, pause);
-	}
+	//}
 		//test_interaction_step(in_lhs_host, in_rhs_host, verbose, ins_type, print_final_net, pause);
 	//	soa::interaction_loop( l_ids, l_names, l_arities, l_p1s, l_p2s, l_p3s, l_p4s,r_ids, r_names, r_arities, r_p1s, r_p2s, r_p3s, r_p4s, verbose, print_final_net);
 
@@ -357,7 +357,7 @@ int main()
 	//regular evaluation
 	else {
 		if (config_manager::get_bool("partition")) {
-			std::cout << "data mode: partition\n";
+			//std::cout << "data mode: partition\n";
 		}
 		else {
 			std::cout << "data mode: regular\n";
