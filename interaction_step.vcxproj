@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EFC96B86-827A-4068-AE84-3D38EDCE1DC5}</ProjectGuid>
+    <RootNamespace>interaction_step</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 4.0.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\CUDALibraries\common\inc;</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\common\lib\win32</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\common\inc</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameC:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\common\lib\win32</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>D:\Program Files (x86)\boost\boost_1_47;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);freeglut.lib;glew32.lib;cutil32D.lib;cutil32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Program Files (x86)\boost\boost_1_47\lib;%(AdditionalLibraryDirectories);C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\common\lib\Win32</AdditionalLibraryDirectories>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <CudaCompile>
+      <Include>C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\CUDALibraries\common\inc</Include>
+      <CodeGeneration>compute_11,sm_20</CodeGeneration>
+      <AdditionalOptions>--opencc-options -OPT:Olimit=99999 %(AdditionalOptions)</AdditionalOptions>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\Program Files (x86)\boost\boost_1_47;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);freeglut.lib;glew32.lib;cutil32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Program Files (x86)\boost\boost_1_47\lib;%(AdditionalLibraryDirectories);$(CudaToolkitLibDir);C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\common\lib\win32</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <CudaCompile>
+      <Include>C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\common\inc</Include>
+      <CodeGeneration>compute_11,sm_13</CodeGeneration>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CudaCompile Include="agent.cu" />
+    <CudaCompile Include="kernel.cu" />
+    <CudaCompile Include="soa\kernel_soa.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="agent_struct.cpp" />
+    <ClCompile Include="C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\common\src\stopwatch.cpp" />
+    <ClCompile Include="C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\common\src\stopwatch_win.cpp" />
+    <ClCompile Include="communication.cpp" />
+    <ClCompile Include="config_manager.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="parse_net.cpp" />
+    <ClCompile Include="result_info.cpp" />
+    <ClCompile Include="soa\agent.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="agent.cuh" />
+    <None Include="input.txt" />
+    <None Include="options.txt" />
+    <None Include="soa\agent_functor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ackermann.h" />
+    <ClInclude Include="agent_struct.h" />
+    <ClInclude Include="algae.h" />
+    <ClInclude Include="cantor_dust.h" />
+    <ClInclude Include="communication.h" />
+    <ClInclude Include="config_manager.h" />
+    <ClInclude Include="fibonacci.h" />
+    <ClInclude Include="kernel.h" />
+    <ClInclude Include="parse_net.h" />
+    <ClInclude Include="result_info.h" />
+    <ClInclude Include="soa\ackermann.h" />
+    <ClInclude Include="soa\agent.h" />
+    <ClInclude Include="soa\algae.h" />
+    <ClInclude Include="soa\communication.h" />
+    <ClInclude Include="soa\fibonacci.h" />
+    <ClInclude Include="soa\kernel_soa.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 4.0.targets" />
+  </ImportGroup>
+</Project>

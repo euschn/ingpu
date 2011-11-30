@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\common\src\stopwatch.cpp" />
+    <ClCompile Include="C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.0\C\common\src\stopwatch_win.cpp" />
+    <ClCompile Include="communication.cpp" />
+    <ClCompile Include="agent_struct.cpp" />
+    <ClCompile Include="config_manager.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="parse_net.cpp" />
+    <ClCompile Include="soa\agent.cpp">
+      <Filter>soa</Filter>
+    </ClCompile>
+    <ClCompile Include="result_info.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="communication.h" />
+    <ClInclude Include="ackermann.h" />
+    <ClInclude Include="agent_struct.h" />
+    <ClInclude Include="config_manager.h" />
+    <ClInclude Include="kernel.h" />
+    <ClInclude Include="parse_net.h" />
+    <ClInclude Include="fibonacci.h" />
+    <ClInclude Include="soa\agent.h">
+      <Filter>soa</Filter>
+    </ClInclude>
+    <ClInclude Include="soa\kernel_soa.h">
+      <Filter>soa</Filter>
+    </ClInclude>
+    <ClInclude Include="soa\communication.h">
+      <Filter>soa</Filter>
+    </ClInclude>
+    <ClInclude Include="soa\ackermann.h">
+      <Filter>soa</Filter>
+    </ClInclude>
+    <ClInclude Include="soa\fibonacci.h">
+      <Filter>soa</Filter>
+    </ClInclude>
+    <ClInclude Include="result_info.h" />
+    <ClInclude Include="algae.h" />
+    <ClInclude Include="soa\algae.h">
+      <Filter>soa</Filter>
+    </ClInclude>
+    <ClInclude Include="cantor_dust.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="agent.cuh" />
+    <None Include="input.txt">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="options.txt">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="soa\agent_functor.h">
+      <Filter>soa</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="agent.cu" />
+    <CudaCompile Include="kernel.cu" />
+    <CudaCompile Include="soa\kernel_soa.cu">
+      <Filter>soa</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{575db932-3ad3-4912-9bef-bfba0c3d078e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="soa">
+      <UniqueIdentifier>{1c64136a-5ca1-402d-9add-df1fecfe4bdd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
