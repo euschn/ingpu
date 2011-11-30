@@ -84,7 +84,7 @@
 
 //A(s) = L(r,i), i=S(a), a=O
 //2
-//A(s) = L(r,i9001), i9001=S(i9002), i9002=S(ib), ib=O
+A(s) = L(r,i9001), i9001=S(i9002), i9002=S(ib), ib=O
 //3
 //A(s) = L(r,i), i=S(a), a=S(b), b=S(c), c=O
 
