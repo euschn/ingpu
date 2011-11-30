@@ -11,9 +11,12 @@ CUDA 4.0 or later
 Boost 1.47 or later
 ingpu uses some C++ 0x features
 
+Build:
+------
+Project files for Visual Studio 2010 are provided.
+
 Usage:
 ------
-
 Currently, rulesets are coded as C++ CUDA kernels. To add your own, implement a header file similar to ackermann.h or fibonacci.h .
 sample kernels provided:
 ackermann.h
@@ -29,4 +32,4 @@ ruleset: 1 = ackermann, 2 = L-System, 3 = fibonacci . to add your own ruleset, m
 file_output: output some statistics/profiling to out.csv
 soa: use "structure of arrays" input data instead of "array of structures" (default). work in progress, may crash for some rules/inputs
 eval_all: evaluate all (uncommented) inputs in input.txt . If set to 0, only the first input is evaluated.
-pause_between_inputs: pause after evaluating each input net
+pause_between_inputs: pause after evaluating each input net.
