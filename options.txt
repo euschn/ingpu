@@ -1,0 +1,9 @@
+verbose 1
+print_final 0
+pause 1
+ruleset 2
+file_output 1
+soa 0
+partition 0
+eval_all 1
+pause_between_inputs 0

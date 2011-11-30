@@ -1,0 +1,153 @@
+
+
+// --------------
+// ackermann
+// --------------
+
+
+//D(a,b) = S(x)
+
+// ack(1,2)
+//A(r,x)=S(a), x=S(y), y=S(z), z=O, a=O
+
+// ack(3,8)
+//A(r,x)=S(a), x=S(y), y=S(z), z=S(u), u=S(v), v=S(w), w=S(t), t=S(q), q=S(s), s=O, a=S(b), b=S(c), c=O
+
+// ack(3,7)
+//A(r,x)=S(a), x=S(y), y=S(z), z=S(u), u=S(v), v=S(w), w=S(t), t=S(q), q=O, a=S(b), b=S(c), c=O
+
+// ack(3,6)
+//A(r,x)=S(a), x=S(y), y=S(z), z=S(u), u=S(v), v=S(w), w=S(t), t=O, a=S(b), b=S(c), c=O
+
+// ack(3,5)
+//A(r,x)=S(a), x=S(y), y=S(z), z=S(u), u=S(v), v=S(w), w=O, a=S(b), b=S(c), c=O
+
+// ack(3,4)
+//A(r,x)=S(a), x=S(y), y=S(z), z=S(u), u=S(v), v=O, a=S(b), b=S(c), c=O
+
+// ack(3,3)
+//A(r,x)=S(a), x=S(y), y=S(z), z=S(u), u=O, a=S(b), b=S(c), c=O
+
+// ack(3,2)
+//A(r,x)=S(a), x=S(y), y=S(z), z=O, a=S(b), b=S(c), c=O 
+
+// ack(3,1)
+//A(r,x)=S(a), x=S(y), y=O, a=S(b), b=S(c), c=O
+
+// ack(2,2)
+//A(r,x)=S(a), x=S(y), y=S(z), z=O, a=S(b), b=O
+
+
+// ack(1,1)
+//A(r,x)=S(a),x=S(y),y=O,a=O
+
+//ack(0,0)
+
+
+// --------------
+// fibonacci
+// --------------
+
+//fib(1)
+//F(r)=S(a),a=O
+
+//fib(6)
+//F(r)=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=O
+
+//fib(10)
+//F(r)=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(i),i=S(j),j=O
+
+//fib(11)
+//F(r)=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(i),i=S(j),j=S(k),k=O
+
+//fib(12)
+//F(r)=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(i),i=S(j),j=S(k),k=S(l),l=O
+
+//fib(15)
+//F(r)=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(i),i=S(j),j=S(k),k=S(l),l=S(m),m=S(n),n=S(p),p=O
+
+//fib(20)
+//F(r)=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(i),i=S(j),j=S(k),k=S(l),l=S(m),m=S(n),n=S(p),p=S(q), q=S(s), s=S(t), t=S(u), u=S(v),v=O
+
+//fib(3)
+//F(r)=S(a),a=S(b),b=S(c),c=O
+
+
+
+
+// -----------------
+// algae L-system
+// A -> AB, B -> A
+// -----------------
+
+// 1
+
+//A(s) = L(r,i), i=S(a), a=O
+//2
+//A(s) = L(r,i9001), i9001=S(i9002), i9002=S(ib), ib=O
+//3
+//A(s) = L(r,i), i=S(a), a=S(b), b=S(c), c=O
+
+
+// 5
+//A(s) = L(r,i), i=S(a), a=S(b), b=S(c), c=S(d), d=S(e), e=O
+
+// 7
+//A(s) = L(r,i), i=S(a), a=S(b), b=S(c), c=S(d), d=S(e), e=S(f), f=S(g), g=O
+
+// 8
+//A(s) = L(r,i), i=S(a), a=S(b), b=S(c), c=S(d), d=S(e), e=S(f), f=S(g), g=S(h), h=O
+
+// 9
+//A(s) = L(r,i), i=S(a), a=S(b), b=S(c), c=S(d), d=S(e), e=S(f), f=S(g), g=S(h), h=S(j), j=O
+
+// 10
+//A(s) = L(r,i), i=S(a), a=S(b), b=S(c), c=S(d), d=S(e), e=S(f), f=S(g), g=S(h), h=S(j), j=S(k), k=O
+
+// 11
+//A(s) = L(r,i),i=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(j),j=S(k), k=S(l), l=O
+
+// 12
+//A(s) = L(r,i),i=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(j),j=S(k),k=S(l), l=S(m), m=O
+
+// 15
+//A(s) = L(r,i),i=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(j),j=S(k),k=S(l), l=S(m), m=S(n), n=S(o), o=S(p), p=O
+
+// 18
+//A(s) = L(r,i),i=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(j),j=S(k),k=S(l), l=S(m), m=S(n), n=S(o), o=S(p), p=S(q), q=S(t), t=S(u), u=O
+
+// 20
+//A(s) = L(r,i),i=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(j),j=S(k),k=S(l), l=S(m), m=S(n), n=S(o), o=S(p), p=S(q), q=S(t), t=S(u), u=S(v), v=S(w), w=O
+
+// 21
+//A(s) = L(r,i),i=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(j),j=S(k),k=S(l), l=S(m), m=S(n), n=S(o), o=S(p), p=S(q), q=S(t), t=S(u), u=S(v), v=S(w), w=S(x), x=O
+
+// 22
+//A(s) = L(r,i),i=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(j),j=S(k),k=S(l), l=S(m), m=S(n), n=S(o), o=S(p), p=S(q), q=S(t), t=S(u), u=S(v), v=S(w), w=S(x), x=S(y), y=O
+
+// 23
+//A(s) = L(r,i),i=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(j),j=S(k),k=S(l), l=S(m), m=S(n), n=S(o), o=S(p), p=S(q), q=S(t), t=S(u), u=S(v), v=S(w), w=S(x), x=S(y), y=S(z), z=O
+
+// 24
+//A(s) = L(r,i),i=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(j),j=S(k),k=S(l), l=S(m), m=S(n), n=S(o), o=S(p), p=S(q), q=S(t), t=S(u), u=S(v), v=S(w), w=S(x), x=S(y), y=S(z), z=S(z1), z1=O
+
+// 25
+//A(s) = L(r,i),i=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(j),j=S(k),k=S(l), l=S(m), m=S(n), n=S(o), o=S(p), p=S(q), q=S(t), t=S(u), u=S(v), v=S(w), w=S(x), x=S(y), y=S(z), z=S(z1), z1=S(z2), z2=O
+
+// 26
+//A(s) = L(r,i),i=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(j),j=S(k),k=S(l), l=S(m), m=S(n), n=S(o), o=S(p), p=S(q), q=S(t), t=S(u), u=S(v), v=S(w), w=S(x), x=S(y), y=S(z), z=S(z1), z1=S(z2), z2=S(z3), z3=O
+
+// 27
+//A(s) = L(r,i),i=S(a),a=S(b),b=S(c),c=S(d),d=S(e),e=S(f),f=S(g),g=S(h),h=S(j),j=S(k),k=S(l), l=S(m), m=S(n), n=S(o), o=S(p), p=S(q), q=S(t), t=S(u), u=S(v), v=S(w), w=S(x), x=S(y), y=S(z), z=S(z1), z1=S(z2), z2=S(z3), z3=S(z4), z4=O
+
+
+// -----------------
+// symbolic addition
+// -----------------
+
+//1 + 1
+//A(r,y) = S(x), y=S(z), z=O, x=O
+
+// test
+//a=B,x=A,a=C,x=i,i=A,E=E
+//b=V,A=B, x=z,z=a,a=b,E=E,x=r
